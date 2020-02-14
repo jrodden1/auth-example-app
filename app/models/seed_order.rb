@@ -1,0 +1,2 @@
+class SeedOrder < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+module SeedOrdersHelper
+end
