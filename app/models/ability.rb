@@ -12,7 +12,11 @@ class Ability
         # can :destroy, Thing, deleted: true
       end
       if user.standard?
-        can :read, User, id: user.id
+        can :create, SeedOrder
+        can :read, User, id: user.id   
+        #essentially, this is SQL query-esque.  If the user is a Standard user, they can READ, from the User model, all user information where the id of the user is their own user.id 
+        can :update, SeedOrder#, user_id: user.id -- I don't have the models connected but if I did, this would say, I can edit any seed order that has my user.id 
+        # Basic syntax
         # can :update, Thing, deleted: false
       end
       if user.viewer? 
